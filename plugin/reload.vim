@@ -1,15 +1,15 @@
 function! ReloadAlpha()
 lua << EOF
     for k in pairs(package.loaded) do 
-        if k:match("^hello") then
+        if k:match("^tb-plugins") then
             package.loaded[k] = nil
         end
     end
 EOF
 endfunction
 
-" Reload the plugin
-nnoremap <Leader>pra :call ReloadAlpha()<CR>
+" " Reload the plugin
+" nnoremap <Leader>pra :call ReloadAlpha()<CR>
 
-" Test the plugin
-nnoremap <Leader>ptt :lua require("hello").sayHelloWorld()<CR>
+" " Test the plugin
+" nnoremap <Leader>ptt :lua require("hello").sayHelloWorld()<CR>
